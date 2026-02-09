@@ -25,7 +25,8 @@ requirements:
     - python >={{ python_min }}
     - matplotlib-base >=3.8.0
     - numpy
-    - pandas
+    # https://github.com/tobac-project/tobac/issues/553
+    - pandas < 3
     - scikit-learn
     - scikit-image >=0.24.0
     - scipy
@@ -33,7 +34,8 @@ requirements:
     - xarray
     - cfgrib
     - h5netcdf
-    - rioxarray
+    # https://github.com/corteva/rioxarray/issues/902
+    - rioxarray < 0.21.0
     - pyresample
     - contextily
     - folium
