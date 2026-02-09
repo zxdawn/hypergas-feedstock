@@ -1,5 +1,5 @@
 {% set name = "hypergas" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 {% set python_min = "3.12" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hypergas-{{ version }}.tar.gz
-  sha256: 9e9d5684de587672fff27c0a50b33d5cdcb288868dfbfd79d6907475ad0c64b8
+  sha256: 01e84ef85fdea0a8bacf2d44ec1303930e3fb46ccbc577105e60ad587f6f3484
 
 build:
   noarch: python
@@ -25,7 +25,8 @@ requirements:
     - python >={{ python_min }}
     - matplotlib-base >=3.8.0
     - numpy
-    - pandas
+    # https://github.com/tobac-project/tobac/issues/553
+    - pandas <3
     - scikit-learn
     - scikit-image >=0.24.0
     - scipy
@@ -33,7 +34,8 @@ requirements:
     - xarray
     - cfgrib
     - h5netcdf
-    - rioxarray
+    # https://github.com/corteva/rioxarray/issues/902
+    - rioxarray <0.21.0
     - pyresample
     - contextily
     - folium
